@@ -1,17 +1,19 @@
 import { ADD_TODO, TOGGLE_COMPLETED } from './types';
 
-export const addTodo = todo => {
+export const addTodo = task => {
   return {
     type: ADD_TODO,
-    payload: todo
+    payload: {
+      task: task,
+      completed: false,
+      id: Date.now()
+    }
   };
 };
 
-export const toggleCompleted = () => {
+export const toggleCompleted = todo => {
   return {
     type: TOGGLE_COMPLETED,
-    payload: {
-      /* ?? */
-    }
+    payload: todo
   };
 };

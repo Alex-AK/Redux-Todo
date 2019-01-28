@@ -10,7 +10,7 @@ export const initialState = {
     {
       task: 'stretch goals',
       completed: false,
-      id: 1234
+      id: 1235
     }
   ]
 };
@@ -23,7 +23,9 @@ const rootReducer = (state = initialState, action) => {
         todos: [...state.todos, action.payload]
       };
     case TOGGLE_COMPLETED:
-      return {};
+      return {
+        // ...state: [...state.todos]
+      };
     default:
       return state;
   }

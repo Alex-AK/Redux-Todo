@@ -1,7 +1,7 @@
 import React from 'react';
 
 const todoList = props => {
-  const mapTodos = props.todos.map(todo => <h3>{todo.task}</h3>);
+  const mapTodos = props.todos.map(todo => <h3 key={todo.id}>{todo.task}</h3>);
 
   return (
     <div className="todo-list">

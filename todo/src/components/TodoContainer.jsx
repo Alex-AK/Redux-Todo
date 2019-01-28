@@ -17,8 +17,9 @@ export class TodoContainer extends Component {
     });
   };
 
-  handleSubmit = (e, id) => {
+  handleSubmit = e => {
     e.preventDefault();
+    this.props.addTodo(this.state.todoInput);
   };
 
   render() {
@@ -28,6 +29,7 @@ export class TodoContainer extends Component {
         <TodoForm
           value={this.state.todoInput}
           handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
         />
       </div>
     );
