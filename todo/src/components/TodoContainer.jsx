@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { addTodo, toggleCompleted } from '../store/actions';
 
 import TodoList from './TodoList';
 import TodoForm from './TodoForm';
@@ -20,8 +23,8 @@ export class TodoContainer extends Component {
 
   render() {
     return (
-      <div>
-        <TodoList />
+      <div className="todo-container">
+        <TodoList todos={this.props.todos} />
         <TodoForm
           value={this.state.todoInput}
           handleChange={this.handleChange}
@@ -31,4 +34,16 @@ export class TodoContainer extends Component {
   }
 }
 
-export default TodoContainer;
+const mapStateToProps = state => {
+  return { todos: state.todos };
+};
+
+const mapActionsToProps = {
+  addTodo,
+  toggleCompleted
+};
+
+export default connect(
+  mapStateToProps,
+  mapActionsToProps
+)(TodoContainer);

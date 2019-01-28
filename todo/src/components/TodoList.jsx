@@ -1,9 +1,12 @@
 import React from 'react';
 
-const todoList = () => {
+const todoList = props => {
+  const mapTodos = props.todos.map(todo => <h3>{todo.task}</h3>);
+
   return (
-    <div>
-      <h1>test</h1>
+    <div className="todo-list">
+      <h1>Redux Todo</h1>
+      {mapTodos}
     </div>
   );
 };

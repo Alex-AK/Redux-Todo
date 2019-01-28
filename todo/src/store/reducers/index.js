@@ -3,12 +3,12 @@ import { ADD_TODO, TOGGLE_COMPLETED } from '../actions/types';
 export const initialState = {
   todos: [
     {
-      task: 'complete todo mvp',
+      task: 'todo app mvp',
       completed: false,
       id: 1234
     },
     {
-      task: 'complete todo stretch',
+      task: 'stretch goals',
       completed: false,
       id: 1234
     }
