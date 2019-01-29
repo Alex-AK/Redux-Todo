@@ -1,6 +1,7 @@
 import { ADD_TODO, TOGGLE_COMPLETED, CLEAR_COMPLETED } from '../actions/types';
+import store from '../index';
 
-export const initialState = {
+const initialState = {
   todos: [
     {
       task: 'todo app mvp',
