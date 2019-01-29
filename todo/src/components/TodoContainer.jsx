@@ -22,10 +22,17 @@ export class TodoContainer extends Component {
     this.props.addTodo(this.state.todoInput);
   };
 
+  toggleCompleted = todo => {
+    this.props.toggleCompleted(todo);
+  };
+
   render() {
     return (
       <div className="todo-container">
-        <TodoList todos={this.props.todos} />
+        <TodoList
+          todos={this.props.todos}
+          toggleCompleted={this.toggleCompleted}
+        />
         <TodoForm
           value={this.state.todoInput}
           handleChange={this.handleChange}
